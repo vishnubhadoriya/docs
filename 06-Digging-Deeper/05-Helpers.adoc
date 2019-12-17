@@ -122,8 +122,8 @@ Returns link:https://www.npmjs.com/package/pify[promisified, window="_blank"] ca
 
 [source, js]
 ----
-const exists = Helpers.promisify(require('fs').exists)
-const isExist = await exists(Helpers.tmpPath('image.jpg'))
+const existsSync = Helpers.promisify(require('fs').existsSync)
+const isExist = existsSync(Helpers.tmpPath('image.jpg'))
 // or
 const fs = Helpers.promisify(require('fs'))
 await fs.unlink(Helpers.tmpPath('image.jpg'))
